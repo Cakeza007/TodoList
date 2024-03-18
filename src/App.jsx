@@ -1,10 +1,11 @@
-import Todo from testTodo.jsx
+
+import TodoDay6 from './TodoListDay6.jsx'
 
 function TodoList() {
   
 
   return (
-    <Todo/>
+    <TodoDay6/>
   )
 }
 
