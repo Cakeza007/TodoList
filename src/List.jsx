@@ -4,35 +4,19 @@
 import { Layout, Form } from "antd";
 import { useState } from "react";
 
-function TodoList() {
-  const [InputList, setInputList] = useState();
-  const [Edit, setEdit] = useState();
-  const [List, setList] = useState([]);
-
-  const onEdit = (index) => {
-    const value = List.find((_, i) => i === index);
-    if (value) setInputList(value);
-    setEdit(index);
-  };
-
-  const Delete = (index) => {
-    const newList = List.filter((_, i) => i !== index);
-    setList(newList);
-  };
-
-
+function List({List, Delete, onEdit}) {
 return (
   <div>
     {List.map((e, index) => {
       return (
         <li key={index}>
           {e}
-          <button onClick={() => onEdit(index)}>Edit</button>
-          <button onClick={() => Delete(index)}>Delete</button>
+          <button onClick={() => onEdit(index)} style={{marginLeft: "20px"}}>Edit</button>
+          <button onClick={() => Delete(index)} style={{marginLeft: "20px" , marginTop: "20px"}}>Delete</button>
         </li>
       );
     })}
   </div>
 );
 }
-export default TodoList;
+export default List;
