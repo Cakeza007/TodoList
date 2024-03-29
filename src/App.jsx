@@ -10,7 +10,7 @@ function TodoList() {
 
   const onSubmit = () => {
     if (edit != null) {
-      const newList = list.map((e, i) => {
+      const newList = list.map((e,i) => {
         if (i === edit) return inputList;
         return e;
       });
@@ -25,7 +25,7 @@ function TodoList() {
   };
 
   const onEdit = (index) => {
-    const value = list.find((_, i) => i === index);
+    const value = list.find((_,i) => i === index);
     if (value) setInputList(value);
     setEdit(index);
   };
@@ -36,25 +36,10 @@ function TodoList() {
   };
 
   return (
-    <Layout
-      style={{
-        backgroundColor: "#7774a3",
-        height: "100vh",
-        width: "100vw",
-       
-      }}
-    >
-      <div>
-        <InputList
-          onSubmit={onSubmit}
-          inputList={inputList}
-          setInputList={setInputList}
-        />
-      </div>
-      <div>
-        <AddList list={list} Delete={Delete} onEdit={onEdit} />
-      </div>
-    </Layout>
+    <div>
+      <InputList onSubmit={onSubmit} inputList={inputList} setInputList={setInputList}/>
+      <AddList onEdit={onEdit} Delete={Delete} list={list}/>
+    </div>
   );
 }
 
