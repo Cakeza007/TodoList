@@ -1,61 +1,58 @@
 import { Layout, Form } from "antd";
 import { useState } from "react";
-import Input from "./Input.jsx";
+import InputList from "./Input.jsx";
 import AddList from "./List.jsx";
 
 function TodoList() {
-  const [List, setList] = useState([]);
-  const [InputList, setInputList] = useState();
-  const [Edit, setEdit] = useState();
+  const [list, setList] = useState([]);
+  const [inputList, setInputList] = useState();
+  const [edit, setEdit] = useState();
 
   const onSubmit = () => {
-    if (Edit != null) {
-      const newList = List.map((e, i) => {
-        if (i === Edit) return InputList;
+    if (edit != null) {
+      const newList = list.map((e, i) => {
+        if (i === edit) return inputList;
         return e;
       });
       setList(newList);
       setInputList("");
       setEdit(undefined);
     } else {
-      if (InputList.length) setList([...List, InputList]);
+      if (inputList.length) setList([...list, inputList]);
       setInputList("");
-      console.log(List);
+      console.log(list);
     }
   };
 
   const onEdit = (index) => {
-    const value = List.find((_, i) => i === index);
+    const value = list.find((_, i) => i === index);
     if (value) setInputList(value);
     setEdit(index);
   };
 
   const Delete = (index) => {
-    const newList = List.filter((_, i) => i !== index);
+    const newList = list.filter((_, i) => i !== index);
     setList(newList);
   };
 
   return (
     <Layout
       style={{
-        margin: "15px 80px",
-        padding: 10,
-        minHeight: 220,
-        backgroundColor: "#242424",
+        backgroundColor: "#7774a3",
+        height: "100vh",
+        width: "100vw",
+       
       }}
     >
       <div>
-        <Input
+        <InputList
           onSubmit={onSubmit}
-          InputList={InputList}
+          inputList={inputList}
           setInputList={setInputList}
         />
       </div>
       <div>
-        <AddList 
-          List={List} 
-          Delete={Delete} 
-          onEdit={onEdit} />
+        <AddList list={list} Delete={Delete} onEdit={onEdit} />
       </div>
     </Layout>
   );
