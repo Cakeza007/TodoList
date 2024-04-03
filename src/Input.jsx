@@ -1,16 +1,20 @@
 import { Form, Button, Input } from "antd";
-
 function TodoInput({ onSubmit, inputList, setInputList }) {
   return (
-    <Form>
+    <Form onFinish={onSubmit}>
       <h1>Todo List</h1>
-      <Input
-        type="text"
-        value={inputList}
-        onChange={(e) => setInputList(e.target.value)}
-        style={{width:"500px"}}
-      ></Input>
-      <Button onClick={onSubmit} style={{ marginLeft: "20px" }}>Submit</Button>
+      <Form.Item>
+        <Input
+          type="text"
+          value={inputList}
+          onChange={(e) => setInputList(e.target.value)}
+          placeholder="Create a new List"
+          style={{ width: "500px" }}
+        ></Input>
+      </Form.Item>
+      <Button type="primary" htmlType="submit">
+        Submit
+      </Button>
     </Form>
   );
 }
