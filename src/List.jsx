@@ -1,20 +1,19 @@
-import { Layout, Form ,Button } from "antd";
+import { Form, Button } from "antd";
 import { useState } from "react";
 
-function List({list, Delete, onEdit}) {
+function List({ list, Delete, onEdit }) {
   return (
-    <Form style={{marginTop:"10px", marginRight:"10px"}}>
-      {list.map((e, index) =>{
+    <div>
+      {list.map((e, index) => {
         return (
           <li key={index}>
             {e}
-            <Button onClick={() => onEdit(index)} style={{marginRight:"10px"}}>Edit</Button>
-            <Button onClick={() => Delete(index)}>Delete</Button>
+            <Button onClick={() => onEdit(index)} style={{marginLeft: "12px" , marginTop: "12px"}}>Edit</Button>
+            <Button onClick={() => Delete(index)} style={{marginLeft: "12px" , marginTop: "12px"}}>Delete</Button>
           </li>
-        )
+        );
       })}
-    </Form>
-  )
-
+    </div>
+  );
 }
 export default List;
