@@ -1,5 +1,4 @@
 import { Form, Button } from "antd";
-import { useState } from "react";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
 
 function List({ list, onEdit, Delete }) {
@@ -11,7 +10,7 @@ function List({ list, onEdit, Delete }) {
             {e}
             <Button
               onClick={() => onEdit(index)}
-              style={{ marginRight: "10px" }}
+              style={{ marginRight: "10px", marginLeft: "10px" }}
             >
               <EditFilled />
             </Button>

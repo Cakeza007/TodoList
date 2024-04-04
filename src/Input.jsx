@@ -12,7 +12,11 @@ function TodoInput({ onSubmit, inputList, setInputList }) {
           style={{ width: "500px" }}
         ></Input>
       </Form.Item>
-      <Button type="primary" htmlType="submit">
+      <Button
+        type="primary"
+        htmlType="submit"
+        style={{ backgroundColor: "#6600ff" }}
+      >
         Submit
       </Button>
     </Form>

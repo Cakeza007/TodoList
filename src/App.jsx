@@ -1,4 +1,3 @@
-import { Form } from "antd";
 import { useState } from "react";
 import InputList from "./Input.jsx";
 import AddList from "./List.jsx";
@@ -41,7 +40,7 @@ function TodoList() {
         inputList={inputList}
         setInputList={setInputList}
       />
-      <AddList onEdit={onEdit} Delete={Delete} list={list} />
+      <AddList Delete={Delete} onEdit={onEdit} list={list} />
     </div>
   );
 }
