@@ -3,7 +3,7 @@ import { DeleteFilled, EditFilled } from "@ant-design/icons";
 
 function List({ list, onEdit, Delete }) {
   return (
-    <Form style={{ marginTop: "10px", marginRight: "10px" }}>
+    <div>
       {list.map((e, index) => {
         return (
           <li key={index}>
@@ -23,7 +23,7 @@ function List({ list, onEdit, Delete }) {
           </li>
         );
       })}
-    </Form>
+    </div>
   );
 }
 export default List;

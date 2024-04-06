@@ -40,7 +40,7 @@ function TodoList() {
         inputList={inputList}
         setInputList={setInputList}
       />
-      <AddList Delete={Delete} onEdit={onEdit} list={list} />
+      <AddList onEdit={onEdit} Delete={Delete} list={list} />
     </div>
   );
 }
