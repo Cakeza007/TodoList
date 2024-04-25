@@ -15,7 +15,7 @@ function TodoInput({ onSubmit, inputList, setInputList }) {
       <Button
         type="primary"
         htmlType="submit"
-        style={{ backgroundColor: "#6600ff" }}
+        style={{ backgroundColor: "#9370DB" }}
       >
         Submit
       </Button>
